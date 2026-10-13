@@ -16,6 +16,8 @@ The application provides a centralized dashboard for monitoring log activity, re
 
 \- Overview
 
+\- Application Screenshots
+
 \- Key Features
 
 \- Threat Detection
@@ -53,6 +55,24 @@ It combines automated log monitoring, rule-based threat detection, alert generat
 
 
 The project demonstrates the integration of backend development, frontend development, database management, and cybersecurity concepts.
+
+## 🖥️ Application Screenshots
+
+### Security Dashboard
+
+![Security Dashboard](docs/screenshots/Dashboard.png)
+
+### Threat Alerts
+
+![Threat Alerts](docs/screenshots/Alerts.png)
+
+### Incident Management
+
+![Incident Management](docs/screenshots/Incidents.png)
+
+### Security Reports
+
+![Security Reports](docs/screenshots/Reports.png)
 
 
 
