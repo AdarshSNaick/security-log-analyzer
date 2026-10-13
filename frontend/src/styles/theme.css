@@ -1,0 +1,1227 @@
+/* =========================================================
+   ULTRA-PROFESSIONAL CYBER SOC DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  --soc-bg-dark: #050814;
+  --soc-bg-card: rgba(11, 18, 38, 0.78);
+  --soc-bg-card-hover: rgba(17, 28, 58, 0.88);
+  --soc-bg-sidebar: #070c1e;
+  --soc-bg-navbar: rgba(7, 12, 30, 0.92);
+
+  --soc-border-color: rgba(0, 242, 254, 0.16);
+  --soc-border-glow: rgba(0, 242, 254, 0.5);
+
+  --soc-cyan: #00f2fe;
+  --soc-blue: #4facfe;
+  --soc-neon-purple: #7928ca;
+
+  --soc-accent-gradient: linear-gradient(
+    135deg,
+    #00f2fe 0%,
+    #4facfe 100%
+  );
+
+  --soc-danger-gradient: linear-gradient(
+    135deg,
+    #ff3b5c 0%,
+    #ff8c00 100%
+  );
+
+  --soc-glass-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+
+  --soc-text-main: #e2e8f0;
+  --soc-text-muted: #8a99ad;
+  --soc-text-bright: #ffffff;
+
+  --soc-critical: #ff2a55;
+  --soc-high: #ff8000;
+  --soc-medium: #ffc107;
+  --soc-low: #00f2fe;
+  --soc-success: #00e676;
+
+  --soc-glass-backdrop: blur(16px);
+
+  --soc-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.45);
+
+  --soc-glow: 0 0 20px rgba(0, 242, 254, 0.25);
+
+  --soc-glow-critical: 0 0 20px rgba(255, 42, 85, 0.3);
+}
+
+
+/* =========================================================
+   LIGHT THEME VARIABLES
+   ========================================================= */
+
+[data-theme="light"] {
+  --soc-bg-dark: #f0f4f9;
+
+  --soc-bg-card: rgba(255, 255, 255, 0.92);
+  --soc-bg-card-hover: rgba(255, 255, 255, 1);
+
+  --soc-bg-sidebar: #0c1527;
+  --soc-bg-navbar: rgba(255, 255, 255, 0.96);
+
+  --soc-border-color: rgba(0, 102, 204, 0.16);
+  --soc-border-glow: rgba(0, 102, 204, 0.4);
+
+  --soc-text-main: #1e293b;
+  --soc-text-muted: #64748b;
+  --soc-text-bright: #0f172a;
+
+  --soc-shadow: 0 8px 24px 0 rgba(149, 157, 165, 0.12);
+
+  --soc-glow: 0 0 15px rgba(0, 102, 204, 0.15);
+}
+
+
+/* =========================================================
+   DARK THEME VARIABLES
+   ========================================================= */
+
+[data-theme="dark"] {
+  --soc-bg-dark: #050814;
+
+  --soc-bg-card: rgba(11, 18, 38, 0.78);
+  --soc-bg-card-hover: rgba(17, 28, 58, 0.88);
+
+  --soc-bg-sidebar: #070c1e;
+  --soc-bg-navbar: rgba(7, 12, 30, 0.92);
+
+  --soc-border-color: rgba(0, 242, 254, 0.16);
+  --soc-border-glow: rgba(0, 242, 254, 0.5);
+
+  --soc-text-main: #e2e8f0;
+  --soc-text-muted: #aebbd0;
+  --soc-text-bright: #ffffff;
+
+  --soc-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.45);
+
+  --soc-glow: 0 0 20px rgba(0, 242, 254, 0.25);
+}
+
+
+/* =========================================================
+   BASE BODY
+   ========================================================= */
+
+body {
+  background-color: var(--soc-bg-dark);
+
+  background-image:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(0, 242, 254, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(79, 172, 254, 0.04) 0%,
+      transparent 40%
+    ),
+    linear-gradient(
+      rgba(0, 242, 254, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 242, 254, 0.02) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    100% 100%,
+    100% 100%,
+    40px 40px,
+    40px 40px;
+
+  color: var(--soc-text-main);
+
+  font-family:
+    "Outfit",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Space Grotesk",
+    "Outfit",
+    sans-serif;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   MONOSPACE
+   ========================================================= */
+
+code,
+pre,
+.font-monospace {
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(5, 8, 20, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 242, 254, 0.4),
+      rgba(79, 172, 254, 0.2)
+    );
+
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--soc-cyan);
+  box-shadow: 0 0 10px var(--soc-cyan);
+}
+
+
+/* =========================================================
+   SOC CARDS
+   ========================================================= */
+
+.soc-card {
+  background: var(--soc-bg-card);
+
+  backdrop-filter: var(--soc-glass-backdrop);
+  -webkit-backdrop-filter: var(--soc-glass-backdrop);
+
+  border: 1px solid var(--soc-border-color);
+
+  border-radius: 14px;
+
+  box-shadow: var(--soc-shadow);
+
+  transition:
+    all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.soc-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--soc-cyan),
+      transparent
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.soc-card:hover {
+  border-color: var(--soc-border-glow);
+
+  box-shadow: var(--soc-glow);
+
+  transform: translateY(-3px);
+
+  background: var(--soc-bg-card-hover);
+}
+
+.soc-card:hover::before {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   SOC BADGES
+   ========================================================= */
+
+.soc-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+
+  font-family: "JetBrains Mono", monospace;
+}
+
+.soc-badge-critical {
+  background: rgba(255, 42, 85, 0.14);
+
+  color: var(--soc-critical);
+
+  border: 1px solid rgba(255, 42, 85, 0.35);
+
+  box-shadow:
+    0 0 10px rgba(255, 42, 85, 0.15);
+}
+
+.soc-badge-high {
+  background: rgba(255, 128, 0, 0.14);
+
+  color: var(--soc-high);
+
+  border: 1px solid rgba(255, 128, 0, 0.35);
+}
+
+.soc-badge-medium {
+  background: rgba(255, 193, 7, 0.14);
+
+  color: var(--soc-medium);
+
+  border: 1px solid rgba(255, 193, 7, 0.35);
+}
+
+.soc-badge-low {
+  background: rgba(0, 242, 254, 0.14);
+
+  color: var(--soc-low);
+
+  border: 1px solid rgba(0, 242, 254, 0.35);
+}
+
+.soc-badge-success {
+  background: rgba(0, 230, 118, 0.14);
+
+  color: var(--soc-success);
+
+  border: 1px solid rgba(0, 230, 118, 0.35);
+}
+
+
+/* =========================================================
+   SOC BUTTONS
+   ========================================================= */
+
+.soc-btn-primary {
+  background: var(--soc-accent-gradient);
+
+  color: #050814 !important;
+
+  font-weight: 700;
+
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 9px 20px;
+
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 4px 16px rgba(0, 242, 254, 0.3);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.soc-btn-primary:hover {
+  opacity: 0.95;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 24px rgba(0, 242, 254, 0.55);
+}
+
+.soc-btn-outline {
+  background: rgba(0, 242, 254, 0.03);
+
+  color: var(--soc-cyan) !important;
+
+  border:
+    1px solid rgba(0, 242, 254, 0.4);
+
+  font-weight: 600;
+
+  border-radius: 10px;
+
+  padding: 9px 20px;
+
+  transition: all 0.25s ease;
+}
+
+.soc-btn-outline:hover {
+  background: rgba(0, 242, 254, 0.12);
+
+  color: var(--soc-cyan) !important;
+
+  border-color: var(--soc-cyan);
+
+  box-shadow:
+    0 0 15px rgba(0, 242, 254, 0.35);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.soc-input {
+  background: rgba(7, 12, 30, 0.7);
+
+  border:
+    1px solid var(--soc-border-color);
+
+  color: var(--soc-text-bright);
+
+  border-radius: 10px;
+
+  padding: 11px 16px;
+
+  font-size: 0.9rem;
+
+  transition: all 0.3s ease;
+}
+
+.soc-input:focus {
+  background: rgba(7, 12, 30, 0.95);
+
+  border-color: var(--soc-cyan);
+
+  outline: none;
+
+  box-shadow:
+    0 0 14px rgba(0, 242, 254, 0.3);
+
+  color: var(--soc-text-bright);
+}
+
+.soc-input::placeholder {
+  color: var(--soc-text-muted);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.soc-table-container {
+  overflow-x: auto;
+
+  border-radius: 10px;
+}
+
+.soc-table {
+  width: 100%;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  color: var(--soc-text-main);
+}
+
+.soc-table th {
+  background: rgba(12, 20, 42, 0.85);
+
+  color: var(--soc-text-muted);
+
+  font-weight: 700;
+
+  font-size: 0.75rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  padding: 14px 18px;
+
+  border-bottom:
+    1px solid var(--soc-border-color);
+
+  font-family: "JetBrains Mono", monospace;
+}
+
+.soc-table td {
+  padding: 14px 18px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  vertical-align: middle;
+
+  font-size: 0.88rem;
+}
+
+.soc-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.soc-table tbody tr:hover {
+  background-color:
+    rgba(0, 242, 254, 0.06);
+}
+
+
+/* =========================================================
+   PULSE INDICATOR
+   ========================================================= */
+
+.pulse-indicator {
+  display: inline-block;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background-color: var(--soc-success);
+
+  box-shadow:
+    0 0 0 rgba(0, 230, 118, 0.4);
+
+  animation:
+    pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(0, 230, 118, 0.8);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 12px rgba(0, 230, 118, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(0, 230, 118, 0);
+  }
+}
+
+
+/* =========================================================
+   RADAR LOADER
+   ========================================================= */
+
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radar-spinner {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid var(--soc-border-color);
+
+  border-top-color: var(--soc-cyan);
+
+  border-right-color: var(--soc-blue);
+
+  animation:
+    radar-sweep 1s infinite linear;
+
+  box-shadow:
+    0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+
+/* =========================================================
+   ALERT PULSE
+   ========================================================= */
+
+.pulse-alert {
+  animation:
+    alert-pulse 1.5s infinite;
+}
+
+@keyframes alert-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   TEXT UTILITIES
+   ========================================================= */
+
+.text-main {
+  color: var(--soc-text-main) !important;
+}
+
+.text-muted {
+  color: var(--soc-text-muted) !important;
+}
+
+.text-bright {
+  color: var(--soc-text-bright) !important;
+}
+
+.text-cyan {
+  color: var(--soc-cyan) !important;
+}
+
+.border-cyan {
+  border-color: var(--soc-cyan) !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.soc-sidebar .nav-link {
+  color: #aebbd0 !important;
+}
+
+.soc-sidebar .nav-link:hover {
+  color: var(--soc-cyan) !important;
+
+  background-color:
+    rgba(0, 242, 254, 0.08) !important;
+}
+
+.soc-sidebar .nav-link.active {
+  color: #050814 !important;
+}
+
+.soc-sidebar .text-muted {
+  color: #8fa1b8 !important;
+}
+
+
+/* =========================================================
+   HOVER UTILITIES
+   ========================================================= */
+
+.hover-text-cyan:hover {
+  color: var(--soc-cyan) !important;
+}
+
+.hover-bg-dark:hover {
+  background-color:
+    rgba(0, 242, 254, 0.08) !important;
+}
+
+
+/* =========================================================
+   DARK MODE TEXT FIX
+   ========================================================= */
+
+[data-theme="dark"] .text-main {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: #aebbd0 !important;
+}
+
+[data-theme="dark"] .text-bright {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DARK MODE CARDS
+   ========================================================= */
+
+[data-theme="dark"] .soc-card {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .soc-card .text-main {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .soc-card .text-muted {
+  color: #aebbd0 !important;
+}
+
+[data-theme="dark"] .soc-card .text-bright {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DARK MODE NAVBAR
+   ========================================================= */
+
+[data-theme="dark"] .navbar {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .navbar .text-main {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .navbar .text-muted {
+  color: #aebbd0 !important;
+}
+
+[data-theme="dark"] .navbar .text-bright {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DARK MODE TABLES
+   ========================================================= */
+
+[data-theme="dark"] .soc-table {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .soc-table td {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .soc-table th {
+  color: #aebbd0;
+}
+
+
+/* =========================================================
+   DARK MODE FORM ELEMENTS
+   ========================================================= */
+
+[data-theme="dark"] .soc-input,
+[data-theme="dark"] select {
+  color: #ffffff !important;
+
+  background-color:
+    rgba(7, 12, 30, 0.9) !important;
+}
+
+[data-theme="dark"] .soc-input::placeholder {
+  color: #aebbd0 !important;
+}
+
+
+/* =========================================================
+   INCIDENT PAGE INFORMATION BOXES
+   ========================================================= */
+
+.incident-dark-box {
+  background-color: #212529 !important;
+
+  color: #e2e8f0 !important;
+}
+
+.incident-dark-text {
+  color: #e2e8f0 !important;
+}
+
+.incident-dark-box .text-muted {
+  color: #aebbd0 !important;
+}
+
+.incident-dark-box .text-bright {
+  color: #ffffff !important;
+}
+
+.incident-dark-box .text-cyan {
+  color: var(--soc-cyan) !important;
+}
+
+
+/* =========================================================
+   INCIDENT TIMELINE
+   ========================================================= */
+
+.incident-dark-box p,
+.incident-dark-box span {
+  color: #e2e8f0 !important;
+}
+
+
+/* =========================================================
+   LIGHT MODE TEXT
+   ========================================================= */
+
+[data-theme="light"] .text-main {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .text-muted {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-bright {
+  color: #0f172a !important;
+}
+
+
+/* =========================================================
+   LIGHT MODE CARDS
+   ========================================================= */
+
+[data-theme="light"] .soc-card {
+  color: #1e293b;
+}
+
+[data-theme="light"] .soc-card .text-main {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .soc-card .text-muted {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .soc-card .text-bright {
+  color: #0f172a !important;
+}
+
+
+/* =========================================================
+   LIGHT MODE INPUTS
+   ========================================================= */
+
+[data-theme="light"] .soc-input {
+  background-color: #ffffff !important;
+
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .soc-input::placeholder {
+  color: #64748b !important;
+}
+
+
+/* =========================================================
+   INCIDENT BOXES
+   Keep these dark in BOTH themes so incident details
+   remain visually consistent.
+   ========================================================= */
+
+.incident-dark-box {
+  background-color: #212529 !important;
+
+  color: #e2e8f0 !important;
+
+  border-color: #495057 !important;
+}
+
+.incident-dark-text {
+  color: #e2e8f0 !important;
+}
+
+/* =========================================================
+   LIGHT MODE - DARK CONTAINER TEXT FIX
+   ========================================================= */
+
+/*
+   Bootstrap .bg-dark containers must keep light text
+   even when the overall application is in light mode.
+*/
+
+[data-theme="light"] .bg-dark {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .bg-dark .text-bright {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-dark .text-main {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .bg-dark .text-muted {
+  color: #aebbd0 !important;
+}
+
+[data-theme="light"] .bg-dark .text-cyan {
+  color: var(--soc-cyan) !important;
+}
+
+
+/* Dashboard hero/header */
+
+[data-theme="light"] .bg-dark h1,
+[data-theme="light"] .bg-dark h2,
+[data-theme="light"] .bg-dark h3,
+[data-theme="light"] .bg-dark h4,
+[data-theme="light"] .bg-dark h5,
+[data-theme="light"] .bg-dark h6 {
+  color: #ffffff !important;
+}
+
+
+/* Dark Bootstrap containers */
+
+[data-theme="light"] .bg-dark p {
+  color: #aebbd0 !important;
+}
+
+[data-theme="light"] .bg-dark span {
+  color: #aebbd0;
+}
+
+[data-theme="light"] .bg-dark .text-bright,
+[data-theme="light"] .bg-dark h1,
+[data-theme="light"] .bg-dark h2,
+[data-theme="light"] .bg-dark h3,
+[data-theme="light"] .bg-dark h4,
+[data-theme="light"] .bg-dark h5,
+[data-theme="light"] .bg-dark h6 {
+  color: #ffffff !important;
+}
+
+
+/* Keep cyan SOC text cyan */
+
+[data-theme="light"] .bg-dark .text-cyan {
+  color: #00f2fe !important;
+}
+
+/* =========================================================
+   INCIDENTS PAGE - LIGHT MODE CONTRAST FIX
+   ========================================================= */
+
+/* Dark incident information boxes */
+[data-theme="light"] .incident-dark-box {
+  background-color: #212529 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .incident-dark-box * {
+  color: #e2e8f0 !important;
+}
+
+/* Cyan values such as source IP */
+[data-theme="light"] .incident-dark-box .text-cyan,
+[data-theme="light"] .incident-dark-box .incident-cyan-text {
+  color: #00f2fe !important;
+}
+
+/* Main text inside dark incident boxes */
+[data-theme="light"] .incident-dark-text {
+  color: #e2e8f0 !important;
+}
+
+/* Incident assessment text */
+[data-theme="light"] .incident-assessment-box {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .incident-assessment-box * {
+  color: #334155 !important;
+}
+
+/* Related security alert dark box */
+[data-theme="light"] .incident-related-alert {
+  background-color: #212529 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .incident-related-alert * {
+  color: #e2e8f0 !important;
+}
+
+/* Keep severity badges readable */
+[data-theme="light"] .incident-related-alert .soc-badge-high {
+  color: var(--soc-high) !important;
+}
+
+[data-theme="light"] .incident-related-alert .soc-badge-critical {
+  color: var(--soc-critical) !important;
+}
+
+[data-theme="light"] .incident-related-alert .soc-badge-medium {
+  color: var(--soc-medium) !important;
+}
+
+[data-theme="light"] .incident-related-alert .soc-badge-low {
+  color: var(--soc-low) !important;
+}
+
+/* Timeline text */
+[data-theme="light"] .incident-timeline-text {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .incident-timeline-date {
+  color: #00a9b7 !important;
+}
+
+/* =========================================================
+   LOGIN PAGE THEME FIX
+   Keeps the dark login hero readable in both themes
+   ========================================================= */
+
+.login-dark-panel {
+  background: #071525 !important;
+  color: #e2e8f0 !important;
+}
+
+.login-dark-panel .login-brand-title {
+  color: #e2e8f0 !important;
+}
+
+.login-dark-panel .login-hero-title {
+  color: #e2e8f0 !important;
+}
+
+.login-dark-panel .login-hero-description {
+  color: #94a3b8 !important;
+}
+
+.login-dark-panel .login-feature-card {
+  background: rgba(20, 34, 55, 0.75) !important;
+  border: 1px solid rgba(0, 242, 254, 0.08) !important;
+}
+
+.login-dark-panel .login-feature-title {
+  color: #e2e8f0 !important;
+}
+
+.login-dark-panel .login-feature-description {
+  color: #94a3b8 !important;
+}
+
+.login-dark-panel .login-footer {
+  color: #64748b !important;
+}
+
+.login-dark-panel .login-status {
+  color: #00f2fe !important;
+}
+
+/* =========================================================
+   LOGIN CARD THEME FIX
+   ========================================================= */
+
+.login-card {
+  background: var(--soc-bg-card) !important;
+  color: var(--soc-text-main) !important;
+}
+
+.login-card-title {
+  color: var(--soc-text-bright) !important;
+}
+
+.login-card-subtitle {
+  color: var(--soc-text-muted) !important;
+}
+
+.login-card-muted {
+  color: var(--soc-text-muted) !important;
+}
+
+/* =========================================================
+   AUTHENTICATION PAGE
+   ========================================================= */
+
+/*
+ * The left side of the login page is intentionally dark.
+ * This keeps the SOC branding readable in both Dark and
+ * Light application themes.
+ */
+
+.auth-feature-panel {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0, 242, 254, 0.08) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(79, 172, 254, 0.07) 0%,
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #070b19 0%,
+      #0d1b2a 50%,
+      #1b263b 100%
+    ) !important;
+
+  border-right: 1px solid rgba(0, 242, 254, 0.16);
+  color: #e2e8f0 !important;
+}
+
+
+/* Brand title */
+
+.auth-brand-title {
+  color: #ffffff !important;
+}
+
+
+/* Main heading */
+
+.auth-feature-title {
+  color: #ffffff !important;
+}
+
+
+/* Description */
+
+.auth-feature-description {
+  color: #8fa1b8 !important;
+}
+
+
+/* Feature cards */
+
+.auth-feature-card {
+  background: rgba(255, 255, 255, 0.045) !important;
+  border: 1px solid rgba(0, 242, 254, 0.08);
+  border-radius: 12px;
+
+  color: #e2e8f0 !important;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.auth-feature-card:hover {
+  background: rgba(255, 255, 255, 0.075) !important;
+  border-color: rgba(0, 242, 254, 0.25);
+
+  transform: translateY(-2px);
+}
+
+
+/* Feature card title */
+
+.auth-feature-card-title {
+  color: #ffffff !important;
+}
+
+
+/* Feature card description */
+
+.auth-feature-card-description {
+  color: #8fa1b8 !important;
+}
+
+
+/* Footer */
+
+.auth-feature-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #8fa1b8 !important;
+}
+
+
+/* =========================================================
+   RIGHT SIDE LOGIN AREA
+   ========================================================= */
+
+.auth-form-panel {
+  background-color: var(--soc-bg-dark);
+  color: var(--soc-text-main);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE AUTH LAYOUT
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+  .auth-feature-panel {
+    min-height: auto;
+  }
+
+  .auth-feature-panel .row {
+    margin-bottom: 1rem;
+  }
+
+  .auth-feature-footer {
+    margin-top: 3rem;
+  }
+
+}
